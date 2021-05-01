@@ -3,7 +3,7 @@ const router = express.Router();
 
 const connection = require('./database/db')
 
-//Show all clients
+//Mostrar todos los clientes
 router.get('/', (req, res) => {
     connection.query('SELECT * FROM clientes', (error, results)=>{
         if(error){
@@ -28,7 +28,7 @@ router.get('/edit/:id', (req,res)=> {
         if(error){
             throw error;
         }else{
-            res.render('edit', {customer:results[0]});
+            res.render('edit', {cliente:results[0], direccion:results[0], nombre_contacto:results[0], telefono:results[0]});
         }
     })
 });
@@ -37,7 +37,7 @@ router.get('/edit/:id', (req,res)=> {
 //Ruta para eliminar cliente
 router.get('/delete/:id', (req, res)=> {
     const id = req.params.id;
-    conexion.query('DELETE FROM clientes WHERE id = ?', [id], (error, results)=>{
+    connection.query('DELETE FROM clientes WHERE id = ?', [id], (error, results)=>{
         if(error){
             throw error;
         }else{

@@ -1,6 +1,32 @@
 <%- include ('layouts/header.ejs') %>
 
-
+<div class="container mt-4">
+    <div class="card border-secondary">
+        <div class="card-header">Nuevo Cliente</div>
+        <div class="card-body">
+            <form action="/save" method="POST">
+                <div class="mb-3">
+                    <label for="cliente" class="form-label">Cliente</label>
+                    <input type="text" class="form-control" id="cliente" name="cliente" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="nombre_contacto" class="form-label">Nombre Contacto</label>
+                    <input type="text" class="form-control" id="nombre_contacto" name="nombre_contacto" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" tabindex="1">
+                </div>
+                <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                <a href="/" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
         
  
         
