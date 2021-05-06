@@ -1,0 +1,34 @@
+<%- include ('./layouts/header.ejs') %>
+
+
+        <a href="/crear_producto" class="btn btn-outline-primary mt-4"><i class="fas fa-user-plus"></i></a>
+        <table id="productos" class="table table-bordered table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">ID</th>
+                    <th scope="col">PRODUCTO</th>
+                    <th scope="col">UNIDAD</th>
+                    <th scope="col">DESCRIPCIÓN</th>
+                    <th scope="col">COSTO</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((producto)=> { %>
+                    <tr>
+                        <td><%= producto.id  %></td>
+                        <td><%= producto.producto  %></td>
+                        <td><%= producto.unidad  %></td>
+                        <td><%= producto.descripcion  %></td>
+                        <td><%= producto.costo  %></td>
+                        <td>
+                            <a href="/editar_producto/<%= producto.id %>" class="btn btn-outline-info"><i class="fas fa-edit"></i></a>
+                            <a onclick="confirmar(<%= producto.id %>)" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <%})%>
+            </tbody>
+        </table>
+ 
+        
+<%- include ('./layouts/footer_producto.ejs') %>

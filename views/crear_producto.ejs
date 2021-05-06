@@ -1,0 +1,33 @@
+<%- include ('./layouts/header.ejs') %>
+
+<div class="container mt-4">
+    <div class="card border-secondary">
+        <div class="card-header">Nuevo Producto</div>
+        <div class="card-body">
+            <form action="/save_producto" method="POST">
+                <div class="mb-3">
+                    <label for="producto" class="form-label">Producto</label>
+                    <input type="text" class="form-control" id="producto" name="producto" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="unidad" class="form-label">Unidad</label>
+                    <input type="text" class="form-control" id="unidad" name="unidad" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" tabindex="1">
+                </div>
+                <div class="mb-3">
+                    <label for="costo" class="form-label">Costo</label>
+                    <input type="text" class="form-control" id="costo" name="costo" tabindex="1">
+                </div>
+                <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
+                <a href="/" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+        
+ 
+        
+<%- include ('./layouts/footer.ejs') %>
